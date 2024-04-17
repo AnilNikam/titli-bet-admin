@@ -68,7 +68,7 @@ function gameLogic(gameName) {
             <div className="flex items-center space-x-[7px]">
               <div className="icon">
                 <span>
-                <p className="text-1xl font-bold leading-[48px] text-bgray-900 dark:text-white">latest Amount Will Win</p>
+                <p className="text-1xl font-bold leading-[48px] text-bgray-900 dark:text-white">Low Amount Will Win</p>
                 </span>
               </div>
               <span className="text-lg font-semibold text-bgray-900 dark:text-white">
@@ -76,14 +76,36 @@ function gameLogic(gameName) {
                 type="radio"
                 id="List Will Win"
                 name="gameMode"
-                value="User"
-                checked={selectedMode === 'User'}
+                value="LowUser"
+                checked={selectedMode === 'LowUser'}
                 onChange={handleModeChange}
               />
               </span>
             </div>
           </div>
         </div>
+
+        <div className="rounded-lg bg-white p-5 dark:bg-darkblack-600">
+        <div className="mb-5 flex items-center justify-between">
+          <div className="flex items-center space-x-[7px]">
+            <div className="icon">
+              <span>
+              <p className="text-1xl font-bold leading-[48px] text-bgray-900 dark:text-white">High Amount Will Win</p>
+              </span>
+            </div>
+            <span className="text-lg font-semibold text-bgray-900 dark:text-white">
+            <input
+              type="radio"
+              id="List Will Win"
+              name="gameMode"
+              value="HighUser"
+              checked={selectedMode === 'HighUser'}
+              onChange={handleModeChange}
+            />
+            </span>
+          </div>
+        </div>
+      </div>
 
         <div className="rounded-lg bg-white p-5 dark:bg-darkblack-600">
           <div className="mb-5 flex items-center justify-between">
@@ -120,13 +142,6 @@ function gameLogic(gameName) {
           </button>
           </div>
         </div>
-
-     
-
-
-        
-
-          
       </div>
     </div>
   );

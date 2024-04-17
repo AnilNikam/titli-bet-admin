@@ -47,7 +47,7 @@ function PlayerTab({ UserId, gameName }) {
       console.log("gameName ",gameName)
       if (gameName == "Wheel Of Fortune") {
        
-        setGameHistoryData(await GetSpinnerHistoryData( Botinfo.UserId))
+        setGameHistoryData(await GetSpinnerHistoryData(Botinfo.UserId))
 
         console.log("gameHistoryData ",gameHistoryData)
 

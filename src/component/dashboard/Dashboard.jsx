@@ -12,8 +12,6 @@ function Dashboard() {
   let apiData = {}
 
   let [totalUser, settotalUser] = useState('');
-  let [totalShop, settotalShop] = useState('');
-  let [totalAgent, settotalAgent] = useState('');
 
   let [totalDeposit, settotalDeposit] = useState('');
   let [todayDeposit, settodayDeposit] = useState('');
@@ -27,11 +25,6 @@ function Dashboard() {
       if(apiData.totalUser != undefined)
       settotalUser(apiData.totalUser)
 
-      if(apiData.totalShop != undefined)
-      settotalShop(apiData.totalShop)
-
-      if(apiData.totalAgent != undefined)
-      settotalAgent(apiData.totalAgent) 
 
       if(apiData.totalDeposit != undefined)
       settotalDeposit(apiData.totalDeposit)
@@ -62,26 +55,8 @@ function Dashboard() {
           logo=""
           link="/transaction"
         />
-        <TotalWidgetCard
-          totalEarnImg={totalEarn}
-          memberImg={memberImg}
-          title="Total Agent"
-          amount={totalAgent}
-          groth="+ 3.5%"
-          id="totalEarn"
-          logo=""
-          link="/agentmanagement"
-        />
-        <TotalWidgetCard
-        totalEarnImg={totalEarn}
-        memberImg={memberImg}
-        title="Total Shop"
-        amount={totalShop}
-        groth="+ 3.5%"
-        id="totalEarn"
-        logo=""
-        link="/shopmanagement"
-      />
+       
+      
         <TotalWidgetCard
           totalEarnImg={totalEarn}
           memberImg={memberImg}

@@ -16,8 +16,7 @@ function Home() {
         <section className="mb-6 2xl:mb-0 2xl:flex-1">
           <Dashboard />
           <ListTab />
-          <ListTabShop />
-          <ListTabAgent />
+        
         </section>
       </div>
     </main>
