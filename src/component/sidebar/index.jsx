@@ -22,10 +22,6 @@ function Sidebar({ handleActive }) {
 
 
 
-  
-
-  
-
   const [payoutlist, setPayoutlist] = useState(false);
 
   const gamelistfunction = (flags) => {
@@ -37,7 +33,7 @@ function Sidebar({ handleActive }) {
 
   const backandwhitegame = (flags) => {
 
-    
+
     setSorat(flags)
     setGamelist(true)
     console.log("gamelist ::::::::::::::::::::::::::", gamelist)
@@ -87,7 +83,7 @@ function Sidebar({ handleActive }) {
           <div className="item-wrapper mb-5">
 
             <ul className="mt-2.5">
-           <li
+              <li
                 className={`item py-[11px] text-bgray-900 dark:text-white ${location === "/dashboard" ? "nav-active" : ""
                   } `}
               >
@@ -199,7 +195,7 @@ function Sidebar({ handleActive }) {
                 </Link>
               </li>
 
-              
+
               <li
                 className={`item py-[11px] text-bgray-900 dark:text-white`}
                 onClick={() => setGamelist(!gamelist)}
@@ -253,7 +249,7 @@ function Sidebar({ handleActive }) {
                     </span>
                   </div>
                 </a>
-                
+
                 <ul
                   className={`sub-menu ml-2.5 mt-[22px]  border-l transition-all overflow-hidden border-success-100 pl-5  ${gamelist || sorat ? "active" : ""
                     }`}
@@ -338,184 +334,184 @@ function Sidebar({ handleActive }) {
                   </li>
                 </ul>
 
-                
+
               </li>
-             
-  
-              <li
-              className={`item py-[11px] text-bgray-900 dark:text-white`}
-              onClick={() => setPayinlist(!payinlist)}
-            >
-              <a className="cursor-pointer">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2.5">
-                    <span className="item-ico">
-                      <svg
-                        width="18"
-                        height="21"
-                        viewBox="0 0 18 21"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          className="path-1"
-                          d="M0 8.84719C0 7.99027 0.366443 7.17426 1.00691 6.60496L6.34255 1.86217C7.85809 0.515019 10.1419 0.515019 11.6575 1.86217L16.9931 6.60496C17.6336 7.17426 18 7.99027 18 8.84719V17C18 19.2091 16.2091 21 14 21H4C1.79086 21 0 19.2091 0 17V8.84719Z"
-                          fill="#1A202C"
-                        />
-                        <path
-                          className="path-2"
-                          d="M5 17C5 14.7909 6.79086 13 9 13C11.2091 13 13 14.7909 13 17V21H5V17Z"
-                          fill="#22C55E"
-                        />
-                      </svg>
-                    </span>
-                    <span className="item-text text-lg font-medium leading-none">
-                      Deposit Management
-                    </span>
-                  </div>
-                  <span
-                    className={`transition-all ${payinlist ? "-rotate-90" : "rotate-0"
-                      }`}
-                  >
-                    <svg
-                      width="6"
-                      height="12"
-                      viewBox="0 0 6 12"
-                      fill="none"
-                      className="fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        fill="currentColor"
-                        d="M0.531506 0.414376C0.20806 0.673133 0.155619 1.1451 0.414376 1.46855L4.03956 6.00003L0.414376 10.5315C0.155618 10.855 0.208059 11.3269 0.531506 11.5857C0.854952 11.8444 1.32692 11.792 1.58568 11.4685L5.58568 6.46855C5.80481 6.19464 5.80481 5.80542 5.58568 5.53151L1.58568 0.531506C1.32692 0.20806 0.854953 0.155619 0.531506 0.414376Z"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </a>
-              <ul
-                className={`sub-menu ml-2.5 mt-[22px]  border-l transition-all overflow-hidden border-success-100 pl-5  ${payinlist ? "active" : ""
-                  }`}
-              >
-                <li>
-                  <Link
-                    to="/depositList?status=Pendding"
-                    className={`text-md inline-block py-1.5 font-medium text-bgray-600 transition-all hover:text-bgray-800 dark:text-bgray-50 hover:dark:text-success-300 ${location === "/home-2" ? "nav-active" : ""
-                      }`}
-                  >
-                    Pendding List
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/depositList?status=Rejected"
-                    className={`text-md inline-block py-1.5 font-medium text-bgray-600 transition-all hover:text-bgray-800 dark:text-bgray-50 hover:dark:text-success-300 ${location === "/home-3" ? "nav-active" : ""
-                      }`}
-                  >
-                    Rejected List
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/depositList?status=Success"
-                    className={`text-md inline-block py-1.5 font-medium text-bgray-600 transition-all hover:text-bgray-800 dark:text-bgray-50 hover:dark:text-success-300 ${location === "/home-3" ? "nav-active" : ""
-                      }`}
-                  >
-                    Success List
-                  </Link>
-                </li>
-              </ul>
-            </li>
+
 
               <li
-              className={`item py-[11px] text-bgray-900 dark:text-white`}
-              onClick={() => setPayoutlist(!payoutlist)}
-            >
-              <a className="cursor-pointer">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2.5">
-                    <span className="item-ico">
+                className={`item py-[11px] text-bgray-900 dark:text-white`}
+                onClick={() => setPayinlist(!payinlist)}
+              >
+                <a className="cursor-pointer">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2.5">
+                      <span className="item-ico">
+                        <svg
+                          width="18"
+                          height="21"
+                          viewBox="0 0 18 21"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            className="path-1"
+                            d="M0 8.84719C0 7.99027 0.366443 7.17426 1.00691 6.60496L6.34255 1.86217C7.85809 0.515019 10.1419 0.515019 11.6575 1.86217L16.9931 6.60496C17.6336 7.17426 18 7.99027 18 8.84719V17C18 19.2091 16.2091 21 14 21H4C1.79086 21 0 19.2091 0 17V8.84719Z"
+                            fill="#1A202C"
+                          />
+                          <path
+                            className="path-2"
+                            d="M5 17C5 14.7909 6.79086 13 9 13C11.2091 13 13 14.7909 13 17V21H5V17Z"
+                            fill="#22C55E"
+                          />
+                        </svg>
+                      </span>
+                      <span className="item-text text-lg font-medium leading-none">
+                        Deposit Management
+                      </span>
+                    </div>
+                    <span
+                      className={`transition-all ${payinlist ? "-rotate-90" : "rotate-0"
+                        }`}
+                    >
                       <svg
-                        width="18"
-                        height="21"
-                        viewBox="0 0 18 21"
+                        width="6"
+                        height="12"
+                        viewBox="0 0 6 12"
                         fill="none"
+                        className="fill-current"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          className="path-1"
-                          d="M0 8.84719C0 7.99027 0.366443 7.17426 1.00691 6.60496L6.34255 1.86217C7.85809 0.515019 10.1419 0.515019 11.6575 1.86217L16.9931 6.60496C17.6336 7.17426 18 7.99027 18 8.84719V17C18 19.2091 16.2091 21 14 21H4C1.79086 21 0 19.2091 0 17V8.84719Z"
-                          fill="#1A202C"
-                        />
-                        <path
-                          className="path-2"
-                          d="M5 17C5 14.7909 6.79086 13 9 13C11.2091 13 13 14.7909 13 17V21H5V17Z"
-                          fill="#22C55E"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          fill="currentColor"
+                          d="M0.531506 0.414376C0.20806 0.673133 0.155619 1.1451 0.414376 1.46855L4.03956 6.00003L0.414376 10.5315C0.155618 10.855 0.208059 11.3269 0.531506 11.5857C0.854952 11.8444 1.32692 11.792 1.58568 11.4685L5.58568 6.46855C5.80481 6.19464 5.80481 5.80542 5.58568 5.53151L1.58568 0.531506C1.32692 0.20806 0.854953 0.155619 0.531506 0.414376Z"
                         />
                       </svg>
                     </span>
-                    <span className="item-text text-lg font-medium leading-none">
-                      PayOut Management
+                  </div>
+                </a>
+                <ul
+                  className={`sub-menu ml-2.5 mt-[22px]  border-l transition-all overflow-hidden border-success-100 pl-5  ${payinlist ? "active" : ""
+                    }`}
+                >
+                  <li>
+                    <Link
+                      to="/depositList?status=Pendding"
+                      className={`text-md inline-block py-1.5 font-medium text-bgray-600 transition-all hover:text-bgray-800 dark:text-bgray-50 hover:dark:text-success-300 ${location === "/home-2" ? "nav-active" : ""
+                        }`}
+                    >
+                      Pendding List
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/depositList?status=Rejected"
+                      className={`text-md inline-block py-1.5 font-medium text-bgray-600 transition-all hover:text-bgray-800 dark:text-bgray-50 hover:dark:text-success-300 ${location === "/home-3" ? "nav-active" : ""
+                        }`}
+                    >
+                      Rejected List
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/depositList?status=Success"
+                      className={`text-md inline-block py-1.5 font-medium text-bgray-600 transition-all hover:text-bgray-800 dark:text-bgray-50 hover:dark:text-success-300 ${location === "/home-3" ? "nav-active" : ""
+                        }`}
+                    >
+                      Success List
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
+              <li
+                className={`item py-[11px] text-bgray-900 dark:text-white`}
+                onClick={() => setPayoutlist(!payoutlist)}
+              >
+                <a className="cursor-pointer">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2.5">
+                      <span className="item-ico">
+                        <svg
+                          width="18"
+                          height="21"
+                          viewBox="0 0 18 21"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            className="path-1"
+                            d="M0 8.84719C0 7.99027 0.366443 7.17426 1.00691 6.60496L6.34255 1.86217C7.85809 0.515019 10.1419 0.515019 11.6575 1.86217L16.9931 6.60496C17.6336 7.17426 18 7.99027 18 8.84719V17C18 19.2091 16.2091 21 14 21H4C1.79086 21 0 19.2091 0 17V8.84719Z"
+                            fill="#1A202C"
+                          />
+                          <path
+                            className="path-2"
+                            d="M5 17C5 14.7909 6.79086 13 9 13C11.2091 13 13 14.7909 13 17V21H5V17Z"
+                            fill="#22C55E"
+                          />
+                        </svg>
+                      </span>
+                      <span className="item-text text-lg font-medium leading-none">
+                        PayOut Management
+                      </span>
+                    </div>
+                    <span
+                      className={`transition-all ${payoutlist ? "-rotate-90" : "rotate-0"
+                        }`}
+                    >
+                      <svg
+                        width="6"
+                        height="12"
+                        viewBox="0 0 6 12"
+                        fill="none"
+                        className="fill-current"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          fill="currentColor"
+                          d="M0.531506 0.414376C0.20806 0.673133 0.155619 1.1451 0.414376 1.46855L4.03956 6.00003L0.414376 10.5315C0.155618 10.855 0.208059 11.3269 0.531506 11.5857C0.854952 11.8444 1.32692 11.792 1.58568 11.4685L5.58568 6.46855C5.80481 6.19464 5.80481 5.80542 5.58568 5.53151L1.58568 0.531506C1.32692 0.20806 0.854953 0.155619 0.531506 0.414376Z"
+                        />
+                      </svg>
                     </span>
                   </div>
-                  <span
-                    className={`transition-all ${payoutlist ? "-rotate-90" : "rotate-0"
-                      }`}
-                  >
-                    <svg
-                      width="6"
-                      height="12"
-                      viewBox="0 0 6 12"
-                      fill="none"
-                      className="fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
+                </a>
+                <ul
+                  className={`sub-menu ml-2.5 mt-[22px]  border-l transition-all overflow-hidden border-success-100 pl-5  ${payoutlist ? "active" : ""
+                    }`}
+                >
+                  <li>
+                    <Link
+                      to="/payoutpendding?status=Pendding"
+                      className={`text-md inline-block py-1.5 font-medium text-bgray-600 transition-all hover:text-bgray-800 dark:text-bgray-50 hover:dark:text-success-300 ${location === "/home-2" ? "nav-active" : ""
+                        }`}
                     >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        fill="currentColor"
-                        d="M0.531506 0.414376C0.20806 0.673133 0.155619 1.1451 0.414376 1.46855L4.03956 6.00003L0.414376 10.5315C0.155618 10.855 0.208059 11.3269 0.531506 11.5857C0.854952 11.8444 1.32692 11.792 1.58568 11.4685L5.58568 6.46855C5.80481 6.19464 5.80481 5.80542 5.58568 5.53151L1.58568 0.531506C1.32692 0.20806 0.854953 0.155619 0.531506 0.414376Z"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </a>
-              <ul
-                className={`sub-menu ml-2.5 mt-[22px]  border-l transition-all overflow-hidden border-success-100 pl-5  ${payoutlist ? "active" : ""
-                  }`}
-              >
-                <li>
-                  <Link
-                    to="/payoutpendding?status=Pendding"
-                    className={`text-md inline-block py-1.5 font-medium text-bgray-600 transition-all hover:text-bgray-800 dark:text-bgray-50 hover:dark:text-success-300 ${location === "/home-2" ? "nav-active" : ""
-                      }`}
-                  >
-                    Pendding List
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/payoutpendding?status=Rejected"
-                    className={`text-md inline-block py-1.5 font-medium text-bgray-600 transition-all hover:text-bgray-800 dark:text-bgray-50 hover:dark:text-success-300 ${location === "/home-3" ? "nav-active" : ""
-                      }`}
-                  >
-                    Rejected List
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/payoutpendding?status=Success"
-                    className={`text-md inline-block py-1.5 font-medium text-bgray-600 transition-all hover:text-bgray-800 dark:text-bgray-50 hover:dark:text-success-300 ${location === "/home-3" ? "nav-active" : ""
-                      }`}
-                  >
-                    Success List
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            
+                      Pendding List
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/payoutpendding?status=Rejected"
+                      className={`text-md inline-block py-1.5 font-medium text-bgray-600 transition-all hover:text-bgray-800 dark:text-bgray-50 hover:dark:text-success-300 ${location === "/home-3" ? "nav-active" : ""
+                        }`}
+                    >
+                      Rejected List
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/payoutpendding?status=Success"
+                      className={`text-md inline-block py-1.5 font-medium text-bgray-600 transition-all hover:text-bgray-800 dark:text-bgray-50 hover:dark:text-success-300 ${location === "/home-3" ? "nav-active" : ""
+                        }`}
+                    >
+                      Success List
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
               <li
                 className={`item py-[11px] text-bgray-900 dark:text-white ${location === "/socialurl" ? "nav-active" : ""
                   } `}
@@ -554,9 +550,9 @@ function Sidebar({ handleActive }) {
                     </div>
                   </div>
                 </Link>
-              </li> 
+              </li>
 
-               <li
+              <li
                 className={`item py-[11px] text-bgray-900 dark:text-white ${location === "/noticetext" ? "nav-active" : ""
                   } `}
               >
@@ -611,7 +607,7 @@ function Sidebar({ handleActive }) {
                     </div>
                   </div>
                 </Link>
-              </li> 
+              </li>
 
               <li
                 className={`item py-[11px] text-bgray-900 dark:text-white ${location === "/commission" ? "nav-active" : ""
@@ -668,7 +664,7 @@ function Sidebar({ handleActive }) {
                     </div>
                   </div>
                 </Link>
-              </li> 
+              </li>
 
 
               <li
