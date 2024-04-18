@@ -1,15 +1,42 @@
 import ProtoTypes from "prop-types";
 import offerContext from '../../context/offerContext';
 import React, { useState, useContext, useEffect } from 'react';
+import { useNavigate,useLocation } from 'react-router-dom';
 
-function PlayerInfo({ UserId,name,email,mobileno,dateOfdeposit,screenshort,depositamount,bankAc,IFSCcode,acname,upi_id,paymentmode,status}) {
+function PlayerInfo({ id,UserId,name,email,mobileno,dateOfdeposit,screenshort,depositamount,bankAc,IFSCcode,acname,upi_id,paymentmode,status}) {
 
   const context = useContext(offerContext)
-  const { host } = context
+  const {DepositeUpdate, host } = context
 
   const styles = {
     backgroundColor: status == -1 ? "red":status == 0 ? "green":"green"
   };
+
+  const navigate = useNavigate();
+  const handleApprove = async (id) =>{
+    console.log("handleApprove ",id)
+    const Update = await DepositeUpdate({ trnsId:id,status:1})
+
+    if(Update.status == "ok"){
+      navigate('/payoutpendding?status=Success');
+    }else{
+        alert("Error Please enter")
+    }
+
+  }
+  const handlerejected = async (id) =>{
+    console.log("handlerejected ",id)
+
+    console.log("handleApprove ",id)
+    const Update = await DepositeUpdate({ trnsId:id,status:0})
+
+    if(Update.status == "ok"){
+      navigate('/payoutpendding?status=Rejected'); 
+  }else{
+      alert("Error Please enter")
+  }
+
+  }
 
   return (
     <tr className="border-b border-bgray-300 dark:border-darkblack-400">
@@ -89,7 +116,36 @@ function PlayerInfo({ UserId,name,email,mobileno,dateOfdeposit,screenshort,depos
           {status == -1 ? "pendding":status == 0 ? "Rejected":"Success"}
         </p>
       </td>
+
+      <td className="px-6 py-5 xl:px-0">
+        <div className="flex justify-center">
       
+
+        {status == -1 ? <button
+                aria-label="none"
+                className="rounded-lg bg-success-300 text-white font-semibold mt-5 py-3.5 px-4"
+                onClick={ () => handleApprove(id) }
+              >
+                Approve
+              </button> : ""}
+
+        </div>
+      </td>
+      <td className="px-6 py-5 xl:px-0">
+        <div className="flex justify-center">
+         
+
+        {status == -1 ? <button
+                aria-label="none"
+                className="rounded-lg bg-red-300 text-white font-semibold mt-5 py-3.5 px-4"
+                onClick={ () => handlerejected(id) }
+              >
+              Rejected
+              </button> : "" }
+
+        </div>
+      </td>
+
     </tr>
   );
 }
