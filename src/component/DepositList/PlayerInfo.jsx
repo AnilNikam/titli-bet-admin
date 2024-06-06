@@ -42,25 +42,11 @@ function PlayerInfo({ id,UserId,name,email,mobileno,dateOfdeposit,screenshort,de
     <tr className="border-b border-bgray-300 dark:border-darkblack-400">
 
       <td className="w-[165px] px-6 py-5 xl:px-0">
-        <p className="text-base font-medium text-bgray-900 dark:text-white">
-          {UserId}
-        </p>
-      </td>
-      <td className="w-[165px] px-6 py-5 xl:px-0">
           <p className="text-base font-semibold text-bgray-900 dark:text-white">
             {name}
           </p>
       </td>
-      <td className="w-[165px] px-6 py-5 xl:px-0">
-        <p className="text-base font-medium text-bgray-900 dark:text-white">
-          {email}
-        </p>
-      </td>
-      <td className="w-[165px] px-6 py-5 xl:px-0">
-        <p className="text-base font-medium text-bgray-900 dark:text-white">
-          {mobileno}
-        </p>
-      </td>
+      
       <td className="w-[165px] px-6 py-5 xl:px-0">
         <p className="text-base font-semibold text-bgray-900 dark:text-white">
           {dateOfdeposit}

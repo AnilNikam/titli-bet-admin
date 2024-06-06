@@ -1,6 +1,16 @@
 import ProtoTypes from "prop-types";
 
-function PlayerInfo({ datetime,UserName,MobileNo,roomid,amount,type,club}) {
+
+// createdAt={user.createdAt}
+//                     userId={user.userId}
+//                     ballposition={user.ballposition}
+//                     beforeplaypoint={user.beforeplaypoint}
+//                     play={user.play}
+//                     won={user.won}
+// afterplaypoint = { user.afterplaypoint }
+                    
+
+function PlayerInfo({ createdAt,userId,ballposition,beforeplaypoint,play,won,afterplaypoint}) {
   return (
     <tr className="border-b border-bgray-300 dark:border-darkblack-400">
       
@@ -8,38 +18,38 @@ function PlayerInfo({ datetime,UserName,MobileNo,roomid,amount,type,club}) {
         <div className="flex w-full items-center space-x-2.5">
           
           <p className="text-base font-semibold text-bgray-900 dark:text-white">
-            {datetime}
+            {createdAt}
           </p>
         </div>
       </td>
       <td className="w-[165px] px-6 py-5 xl:px-0">
         <p className="text-base font-medium text-bgray-900 dark:text-white">
-          {UserName}
+          {userId}
         </p>
       </td>
       <td className="w-[165px] px-6 py-5 xl:px-0">
         <p className="text-base font-medium text-bgray-900 dark:text-white">
-          {MobileNo}
+          {ballposition}
         </p>
       </td>
       <td className="w-[165px] px-6 py-5 xl:px-0">
         <p className="text-base font-semibold text-bgray-900 dark:text-white">
-          {roomid}
+          {beforeplaypoint}
         </p>
       </td>
       <td className="w-[165px] px-6 py-5 xl:px-0">
         <p className="text-base font-medium text-bgray-900 dark:text-white">
-        ₹{amount}
+        ₹{play}
         </p>
       </td>
       <td className="w-[165px] px-6 py-5 xl:px-0">
         <p className="text-base font-medium text-bgray-900 dark:text-white">
-          {type}
+          {won}
         </p>
       </td>
       <td className="w-[165px] px-6 py-5 xl:px-0">
         <p className="text-base font-medium text-bgray-900 dark:text-white">
-          {club}
+          {afterplaypoint}
         </p>
       </td>
       

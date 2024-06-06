@@ -5,7 +5,7 @@ import users from "../../data/user";
 import offerContext from '../../context/offerContext';
 
 
-function PlayerTab({status }) {
+function PlayerTab({ status }) {
   //-------------------------------------------------------------------------------------------------------
   const [active, setActive] = useState(false);
   const [pageSize, setPageSize] = useState(5);
@@ -25,20 +25,20 @@ function PlayerTab({status }) {
 
 
   const context = useContext(offerContext)
-  const { DepositeList,DepositeAccptedList,DepositeRejectedList } = context
+  const { DepositeList, DepositeAccptedList, DepositeRejectedList } = context
 
 
 
   useEffect(() => {
     const submitdata = async () => {
-      console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",status)
+      console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", status)
 
-      if(status == "Success" ){
-       
+      if (status == "Success") {
+
         setUserData(await DepositeAccptedList())
-      }else if(status == "Rejected"){
+      } else if (status == "Rejected") {
         setUserData(await DepositeRejectedList())
-      }else{
+      } else {
         setUserData(await DepositeList())
 
       }
@@ -59,8 +59,7 @@ function PlayerTab({status }) {
       (!from || registrationDate >= from) &&
       (!to || registrationDate <= to) &&
       (searchTerm === '' ||
-        user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        user.mobileno.includes(searchTerm))
+        user.name.toLowerCase().includes(searchTerm.toLowerCase()))
     );
   });
 
@@ -147,7 +146,7 @@ function PlayerTab({status }) {
           <button aria-label="none"
             className="bg-success-300 dark:bg-success-300 dark:text-bgray-900 border-2 border-transparent text-white rounded-lg px-4 py-3 font-semibold text-sm" onClick={resetDate}>Reset</button>
 
-        
+
         </div>
       </div>
       <div className="table-content w-full overflow-x-auto">
@@ -155,51 +154,6 @@ function PlayerTab({status }) {
           <tbody>
             <tr className="border-b border-bgray-300 dark:border-darkblack-400">
 
-              <td className="w-[165px] px-6 py-5 xl:px-0">
-                <div className="flex w-full items-center space-x-2.5">
-                  <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
-                    User Id
-                  </span>
-                  <span>
-                    <svg
-                      width="14"
-                      height="15"
-                      viewBox="0 0 14 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10.332 1.31567V13.3157"
-                        stroke="#718096"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M5.66602 11.3157L3.66602 13.3157L1.66602 11.3157"
-                        stroke="#718096"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M3.66602 13.3157V1.31567"
-                        stroke="#718096"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M12.332 3.31567L10.332 1.31567L8.33203 3.31567"
-                        stroke="#718096"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </td>
               <td className="w-[165px] px-6 py-5 xl:px-0">
                 <div className="flex w-full items-center space-x-2.5">
                   <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
@@ -245,96 +199,7 @@ function PlayerTab({status }) {
                   </span>
                 </div>
               </td>
-              <td className="w-[165px] px-6 py-5 xl:px-0">
-                <div className="flex w-full items-center space-x-2.5">
-                  <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
-                    Email
-                  </span>
-                  <span>
-                    <svg
-                      width="14"
-                      height="15"
-                      viewBox="0 0 14 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10.332 1.31567V13.3157"
-                        stroke="#718096"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M5.66602 11.3157L3.66602 13.3157L1.66602 11.3157"
-                        stroke="#718096"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M3.66602 13.3157V1.31567"
-                        stroke="#718096"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M12.332 3.31567L10.332 1.31567L8.33203 3.31567"
-                        stroke="#718096"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </td>
-              <td className="w-[165px] px-6 py-5 xl:px-0">
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
-                    Mobile Number
-                  </span>
-                  <span>
-                    <svg
-                      width="14"
-                      height="15"
-                      viewBox="0 0 14 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10.332 1.31567V13.3157"
-                        stroke="#718096"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M5.66602 11.3157L3.66602 13.3157L1.66602 11.3157"
-                        stroke="#718096"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M3.66602 13.3157V1.31567"
-                        stroke="#718096"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M12.332 3.31567L10.332 1.31567L8.33203 3.31567"
-                        stroke="#718096"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </td>
+
               <td className="w-[165px] px-6 py-5 xl:px-0">
                 <div className="flex w-full items-center space-x-2.5">
                   <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
@@ -741,99 +606,99 @@ function PlayerTab({status }) {
                 </div>
               </td>
 
-              <td className="w-[165px] px-6 py-5 xl:px-0">
-              <div className="flex w-full items-center space-x-2.5">
-                <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
-                  Approve
-                </span>
-                <span>
-                  <svg
-                    width="14"
-                    height="15"
-                    viewBox="0 0 14 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.332 1.31567V13.3157"
-                      stroke="#718096"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M5.66602 11.3157L3.66602 13.3157L1.66602 11.3157"
-                      stroke="#718096"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M3.66602 13.3157V1.31567"
-                      stroke="#718096"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M12.332 3.31567L10.332 1.31567L8.33203 3.31567"
-                      stroke="#718096"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </td>
+              {status == "Pendding" ? <td className="w-[165px] px-6 py-5 xl:px-0">
+                <div className="flex w-full items-center space-x-2.5">
+                  <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
+                    Approve
+                  </span>
+                  <span>
+                    <svg
+                      width="14"
+                      height="15"
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.332 1.31567V13.3157"
+                        stroke="#718096"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M5.66602 11.3157L3.66602 13.3157L1.66602 11.3157"
+                        stroke="#718096"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M3.66602 13.3157V1.31567"
+                        stroke="#718096"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12.332 3.31567L10.332 1.31567L8.33203 3.31567"
+                        stroke="#718096"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </td> : ""}
 
-            <td className="w-[165px] px-6 py-5 xl:px-0">
-              <div className="flex w-full items-center space-x-2.5">
-                <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
-                  Rejected
-                </span>
-                <span>
-                  <svg
-                    width="14"
-                    height="15"
-                    viewBox="0 0 14 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.332 1.31567V13.3157"
-                      stroke="#718096"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M5.66602 11.3157L3.66602 13.3157L1.66602 11.3157"
-                      stroke="#718096"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M3.66602 13.3157V1.31567"
-                      stroke="#718096"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M12.332 3.31567L10.332 1.31567L8.33203 3.31567"
-                      stroke="#718096"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </td>
+              {status == "Pendding" ? <td className="w-[165px] px-6 py-5 xl:px-0">
+                <div className="flex w-full items-center space-x-2.5">
+                  <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
+                    Rejected
+                  </span>
+                  <span>
+                    <svg
+                      width="14"
+                      height="15"
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.332 1.31567V13.3157"
+                        stroke="#718096"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M5.66602 11.3157L3.66602 13.3157L1.66602 11.3157"
+                        stroke="#718096"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M3.66602 13.3157V1.31567"
+                        stroke="#718096"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12.332 3.31567L10.332 1.31567L8.33203 3.31567"
+                        stroke="#718096"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </td> : ""}
 
-             
+
             </tr>
             {filteredUsers?.map((user, index) =>
               pageSize
@@ -851,7 +716,7 @@ function PlayerTab({status }) {
                     bankAc={user.bankAc}
                     IFSCcode={user.IFSCcode}
                     acname={user.acname}
-                    upi_id={user.upi_id}
+                    upi_id={user.UTR}
                     paymentmode={user.paymentmode}
                     status={user.status}
 
@@ -871,7 +736,7 @@ function PlayerTab({status }) {
                     bankAc={user.bankAc}
                     IFSCcode={user.IFSCcode}
                     acname={user.acname}
-                    upi_id={user.upi_id}
+                    upi_id={user.UTR}
                     paymentmode={user.paymentmode}
                     status={user.status}
                   />
@@ -894,7 +759,7 @@ function PlayerTab({status }) {
                 className="flex items-center space-x-6 rounded-lg border border-bgray-300 px-2.5 py-[14px] dark:border-darkblack-400"
               >
                 <span className="text-sm font-semibold text-bgray-900 dark:text-bgray-50">
-                {pageSize}
+                  {pageSize}
                 </span>
                 <span>
                   <svg

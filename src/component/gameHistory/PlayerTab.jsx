@@ -67,8 +67,7 @@ function PlayerTab({ gameName }) {
       (!from || registrationDate >= from) &&
       (!to || registrationDate <= to) &&
       (searchTerm === '' ||
-        user.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        user.PhoneNumber.includes(searchTerm))
+        user.userId.toLowerCase().includes(searchTerm.toLowerCase()))
     );
   });
 
@@ -212,7 +211,7 @@ function PlayerTab({ gameName }) {
             <td className="w-[165px] px-6 py-5 xl:px-0">
               <div className="flex w-full items-center space-x-2.5">
                 <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
-                 Name
+                 User Id
                 </span>
                 <span>
                   <svg
@@ -257,7 +256,7 @@ function PlayerTab({ gameName }) {
             <td className="w-[165px] px-6 py-5 xl:px-0">
               <div className="flex items-center space-x-2.5">
                 <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
-                  Mobile Number
+                Images
                 </span>
                 <span>
                   <svg
@@ -302,7 +301,7 @@ function PlayerTab({ gameName }) {
             <td className="w-[165px] px-6 py-5 xl:px-0">
               <div className="flex w-full items-center space-x-2.5">
                 <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
-                Room Id
+                Before Play
                 </span>
                 <span>
                   <svg
@@ -347,7 +346,7 @@ function PlayerTab({ gameName }) {
             <td className="w-[165px] px-6 py-5 xl:px-0">
               <div className="flex w-full items-center space-x-2.5">
                 <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
-                Amount
+                Play Bet
                 </span>
                 <span>
                   <svg
@@ -392,7 +391,7 @@ function PlayerTab({ gameName }) {
             <td className="w-[165px] px-6 py-5 xl:px-0">
               <div className="flex w-full items-center space-x-2.5">
                 <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
-                Type
+                Won Amount
                 </span>
                 <span>
                   <svg
@@ -437,7 +436,7 @@ function PlayerTab({ gameName }) {
             <td className="w-[165px] px-6 py-5 xl:px-0">
               <div className="flex w-full items-center space-x-2.5">
                 <span className="text-base font-medium text-bgray-600 dark:text-bgray-50">
-                Game
+                After Play Amount
                 </span>
                 <span>
                   <svg
@@ -486,26 +485,26 @@ function PlayerTab({ gameName }) {
               ? index + 1 <= pageSize && (
                   <CustomerInfo
                     key={user._id}
-                    datetime={user.DateTime}
-                    UserName={user.Name}
-                    MobileNo={user.PhoneNumber}
-                    roomid={user.RoomId}
-                    amount={user.Amount}
-                    type={user.Type}
-                    club={user.game}
+                    createdAt={user.createdAt}
+                    userId={user.userId}
+                    ballposition={user.ballposition}
+                    beforeplaypoint={user.beforeplaypoint}
+                    play={user.play}
+                    won={user.won}
+                    afterplaypoint={user.afterplaypoint}
 
                   />
                 )
               : index < 3 && (
                   <CustomerInfo
                     key={user._id}
-                    datetime={user.DateTime}
-                    UserName={user.Name}
-                    MobileNo={user.PhoneNumber}
-                    roomid={user.RoomId}
-                    amount={user.Amount}
-                    type={user.Type}
-                    club={user.game}
+                    createdAt={user.createdAt}
+                    userId={user.userId}
+                    ballposition={user.ballposition}
+                    beforeplaypoint={user.beforeplaypoint}
+                    play={user.play}
+                    won={user.won}
+                    afterplaypoint={user.afterplaypoint}
                   />
                 )
           )}
