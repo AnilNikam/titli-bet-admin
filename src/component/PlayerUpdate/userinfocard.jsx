@@ -87,9 +87,9 @@ function userInfo() {
 
     let res = await AddMoney({ money: amount, type: "Deposit", userId: Botinfo.UserId })
 
-    if (res.status == "ok") {
+    if (res.msg != undefined) {
 
-      alert("Successfully Added...!!")
+      alert(res.msg)
     } else {
       alert("Error Please enter")
     }
@@ -105,9 +105,9 @@ function userInfo() {
 
     let res = await DeductMoney({ money: amount, type: "Deduct", userId: Botinfo.UserId })
     
-    if (res.status == "ok") {
+    if (res.msg != undefined) {
 
-      alert("Successfully Deduct...!!")
+      alert(res.msg)
     } else {
       alert("Error Please enter")
     }

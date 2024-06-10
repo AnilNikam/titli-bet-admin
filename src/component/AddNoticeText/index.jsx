@@ -12,6 +12,7 @@ function addnoticetext() {
   const navigate = useNavigate();
   const navigateToContacts = () => {
     // 👇️ navigate to /contacts 
+    console.log("dddd")
     navigate('/noticetext');
   };
 
@@ -35,6 +36,7 @@ function addnoticetext() {
         setNewTitle('');
         setNewContent('');
         navigateToContacts()
+        window.location.reload();
       } else {
         alert("Error Please enter")
       }

@@ -20,6 +20,8 @@ function CustomerInfo({ title, content, date, id }) {
     await DeleteNoticeText(id)
 
     navigateToContacts()
+    
+    window.location.reload();
 
   };
 

@@ -18,6 +18,7 @@ function agentAdd() {
   const navigateToContacts = () => {
     // 👇️ navigate to /contacts 
     navigate('/agentmanagement');
+    
   };
 
   let [userInfo, SetuserInfo] = useState({
